@@ -1,3 +1,63 @@
+/**** VARIABLES ****/
+
+:root {
+  --bg-grey-darkest: #121212;
+  --bg-grey-dark: #212121;
+  --bg-grey-light: #898989;
+}
+
 body {
-  background-color: #303030;
+  background-color: var(--bg-grey-darkest);
+}
+
+/******** COLORS ********/
+
+.bg-grey-light {
+  background-color: var(--bg-grey-light);
+}
+
+.bg-grey-light:hover {
+  background-color: #a7a7a7;
+}
+
+.bg-blue {
+  background-color: #00a2ff;
+}
+
+.bg-blue:hover {
+  background-color: #40b9ff;
+}
+
+/***** LAYOUT ******/
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 210px;
+  width: 275px;
+  background-color: var(--bg-grey-dark);
+}
+
+.display {
+  background-color: var(--bg-grey-light);
+  border-radius: 3px;
+  width: 265px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.calc__button {
+  outline: none;
+  margin: 2px;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  width: 60px;
+  transition: background-color 0.5s;
+}
+
+.calc__button:active {
+  transform: scale(0.97);
 }
