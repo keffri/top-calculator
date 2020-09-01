@@ -59,6 +59,7 @@ body {
   width: 400px;
   background-color: #212121;
   border-radius: 3px;
+  border: 1px solid #000;
 }
 
 .display-bg {
@@ -68,6 +69,7 @@ body {
   height: 100px;
   width: 380px;
   border-radius: 3px;
+  border: 1px solid #000;
   background-color: #313131;
 }
 
@@ -78,12 +80,14 @@ body {
   border-radius: 3px;
   height: 90px;
   width: 370px;
+  border: 1px solid #000;
   background-color: #898989;
 }
 
 .display-text {
-  font-size: 40px;
-  line-height: 90px;
+  margin-top: 15px;
+  font-size: 50px;
+
   text-align: end;
   padding-right: 20px;
 }
@@ -99,6 +103,7 @@ body {
   width: 380px;
   background-color: #313131;
   border-radius: 3px;
+  border: 1px solid #000;
 }
 
 .calc__button {
@@ -111,6 +116,7 @@ body {
   border: none;
   margin-right: 2px;
   border-radius: 3px;
+  border: 1px solid #000;
   transition: background-color 0.8s;
 }
 
