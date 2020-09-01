@@ -5,9 +5,11 @@
 html,
 body {
   height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  overflow-y: hidden;
   background-color: #121212;
   position: relative;
 }
@@ -30,6 +32,22 @@ body {
   background-color: #40b9ff;
 }
 
+.bg-red {
+  background-color: #ff3535;
+}
+
+.bg-red:hover {
+  background-color: #ff4e4e;
+}
+
+.bg-green {
+  background-color: #1aee30;
+}
+
+.bg-green:hover {
+  background-color: #37f04a;
+}
+
 /**** CALCULATOR ****/
 
 .calculator {
@@ -41,7 +59,6 @@ body {
   width: 400px;
   background-color: #212121;
   border-radius: 3px;
-  font-size: 40px;
 }
 
 .display-bg {
@@ -62,6 +79,13 @@ body {
   height: 90px;
   width: 370px;
   background-color: #898989;
+}
+
+.display-text {
+  font-size: 40px;
+  line-height: 90px;
+  text-align: end;
+  padding-right: 20px;
 }
 
 .buttons {
