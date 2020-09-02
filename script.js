@@ -1,3 +1,8 @@
+const numberButtons = document.querySelectorAll("[data-number]");
+const operatorButtons = document.querySelectorAll("[data-operator]");
+
+/***** FUNCTIONS  *****/
+
 function add(a, b) {
   let c = a + b;
   return c;

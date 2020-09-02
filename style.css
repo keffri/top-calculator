@@ -1,11 +1,13 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
 body {
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -21,7 +23,7 @@ body {
 }
 
 .bg-grey-light:hover {
-  background-color: #a7a7a7;
+  background-color: #b5b5b5;
 }
 
 .bg-blue {
@@ -29,7 +31,7 @@ body {
 }
 
 .bg-blue:hover {
-  background-color: #40b9ff;
+  background-color: #80d1ff;
 }
 
 .bg-red {
@@ -37,7 +39,7 @@ body {
 }
 
 .bg-red:hover {
-  background-color: #ff4e4e;
+  background-color: #ff8181;
 }
 
 .bg-green {
@@ -45,7 +47,7 @@ body {
 }
 
 .bg-green:hover {
-  background-color: #37f04a;
+  background-color: #a9f9b1;
 }
 
 /**** CALCULATOR ****/
@@ -82,14 +84,19 @@ body {
   width: 370px;
   border: 1px solid #000;
   background-color: #898989;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px;
 }
 
-.display-text {
-  margin-top: 15px;
-  font-size: 50px;
+.display .previous-operand {
+  font-size: 1.5rem;
+}
 
-  text-align: end;
-  padding-right: 20px;
+.display .current-operand {
+  font-size: 2.5rem;
 }
 
 .buttons {
@@ -106,6 +113,10 @@ body {
   border: 1px solid #000;
 }
 
+.buttons > button {
+  cursor: pointer;
+}
+
 .calc__button {
   font-size: 20px;
   position: relative;
@@ -117,11 +128,11 @@ body {
   margin-right: 2px;
   border-radius: 3px;
   border: 1px solid #000;
-  transition: background-color 0.8s;
+  transition: background-color 0.4s;
 }
 
 .calc__button:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 .calc__button:focus {
@@ -129,5 +140,9 @@ body {
 }
 
 .equals {
+  width: 182px;
+}
+
+.clear {
   width: 182px;
 }
