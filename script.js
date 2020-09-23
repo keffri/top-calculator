@@ -10,6 +10,7 @@ const currentOperandText = document.querySelector("[data-current-operand]");
 let previousValue = "";
 let currentValue = "";
 let chosenOperator = undefined;
+let answer;
 
 /***** FUNCTIONS  *****/
 
@@ -47,6 +48,9 @@ numberButtons.forEach((numButton) => {
       numButton.textContent === "."
     ) {
       currentOperandText.textContent += "";
+    } else if (currentOperandText.textContent == answer) {
+      currentOperandText.textContent = "";
+      currentOperandText.textContent += numButton.textContent;
     } else {
       currentOperandText.textContent += numButton.textContent;
     }
@@ -70,17 +74,24 @@ operatorButtons.forEach((opButton) => {
 });
 
 equalsButton.addEventListener("click", () => {
+  if (chosenOperator === undefined) {
+    return;
+  }
   if (chosenOperator === divide && currentOperandText.textContent === "0") {
     previousValue = "";
     currentOperandText.textContent = "";
     alert("You cannot divide by zero.");
     return;
   }
-  currentOperandText.textContent = chosenOperator(
-    parseInt(previousValue),
-    parseInt(currentOperandText.textContent)
+  answer = chosenOperator(
+    parseFloat(previousValue),
+    parseFloat(currentOperandText.textContent)
   );
+
+  currentOperandText.textContent = answer;
+
   previousValue = "";
+  chosenOperator = undefined;
 });
 
 clearButton.addEventListener("click", () => {
