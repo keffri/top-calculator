@@ -59,8 +59,33 @@ numberButtons.forEach((numButton) => {
 
 operatorButtons.forEach((opButton) => {
   opButton.addEventListener("click", () => {
-    previousValue = currentOperandText.textContent;
+    if (previousValue === "" && chosenOperator === undefined) {
+      previousValue = currentOperandText.textContent;
+    } else if (chosenOperator === add) {
+      previousValue = chosenOperator(
+        parseFloat(previousValue),
+        parseFloat(currentOperandText.textContent)
+      );
+    } else if (chosenOperator === subtract) {
+      previousValue = chosenOperator(
+        parseFloat(previousValue),
+        parseFloat(currentOperandText.textContent)
+      );
+    } else if (chosenOperator === multiply) {
+      previousValue = chosenOperator(
+        parseFloat(previousValue),
+        parseFloat(currentOperandText.textContent)
+      );
+    } else if (chosenOperator === divide) {
+      previousValue = chosenOperator(
+        parseFloat(previousValue),
+        parseFloat(currentOperandText.textContent)
+      );
+    }
+
+    // currentOperandText.textContent = previousValue;
     currentOperandText.textContent = "";
+
     if (opButton.textContent === "+") {
       chosenOperator = add;
     } else if (opButton.textContent === "-") {
@@ -77,6 +102,9 @@ equalsButton.addEventListener("click", () => {
   if (chosenOperator === undefined) {
     return;
   }
+  if (currentOperandText.textContent === "") {
+    return;
+  }
   if (chosenOperator === divide && currentOperandText.textContent === "0") {
     previousValue = "";
     currentOperandText.textContent = "";
@@ -88,7 +116,7 @@ equalsButton.addEventListener("click", () => {
     parseFloat(currentOperandText.textContent)
   );
 
-  currentOperandText.textContent = answer;
+  currentOperandText.textContent = answer.toFixed(2);
 
   previousValue = "";
   chosenOperator = undefined;
