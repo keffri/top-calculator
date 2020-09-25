@@ -43,6 +43,10 @@ function operate(a, b, op) {
 
 numberButtons.forEach((numButton) => {
   numButton.addEventListener("click", () => {
+    if (currentOperandText.textContent.length > 15) {
+      return;
+    }
+
     if (
       currentOperandText.textContent.includes(".") &&
       numButton.textContent === "."
@@ -59,6 +63,10 @@ numberButtons.forEach((numButton) => {
 
 operatorButtons.forEach((opButton) => {
   opButton.addEventListener("click", () => {
+    if (currentOperandText.textContent === "") {
+      return;
+    }
+
     if (previousValue === "" && chosenOperator === undefined) {
       previousValue = currentOperandText.textContent;
     } else if (chosenOperator === add) {
@@ -117,6 +125,10 @@ equalsButton.addEventListener("click", () => {
   );
 
   currentOperandText.textContent = answer.toFixed(2);
+
+  if (currentOperandText.textContent.length > 15) {
+    currentOperandText.style.fontSize = "1.95em";
+  }
 
   previousValue = "";
   chosenOperator = undefined;
